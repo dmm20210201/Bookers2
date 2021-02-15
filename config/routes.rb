@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
- root to: 'homes#top'
+  get 'books/new'
+  devise_for :users
+  root to: 'homes#top'
+  get 'homes/about'
 end
