@@ -5,5 +5,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+    if @user.sign_up
+      redirect_to user_path(@user.id), notice: "Welcome! You have signed up successfully."
+    else
+     @user = User.all
+     render :index
+    end
   end
 end

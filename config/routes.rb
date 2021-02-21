@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'homes/about'
   resources :users
   resources :books
+  resources :user_images
 end
