@@ -72,13 +72,13 @@
               <th colspan="3"></th>
             </tr>
           </thead>
-            <tbody>
-              <% @books.each do |book| %>
+          <tbody>
+            <% @books.each do |book| %>
               <tr>
                 <td><%= link_to user_path(book.user.id) do %>
                     <%= attachment_image_tag book.user, :profile_image, size: "50x50", fallback: "no_image.jpg" %>
                     <% end %>
-                    </td>
+                </td>
                 <td><%= link_to book.title, book_path(book.id) %></td>
                 <td><%= book.body %></td>
                 <td><% if book.favorited_by?(current_user) %>
@@ -99,10 +99,9 @@
                   <p>コメント数:<%= book.book_comments.count %></p>
                 </td>
               </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+            <% end %>
+          </tbody>
+        </table>
       </div>
 
     </div>

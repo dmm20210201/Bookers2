@@ -2,12 +2,19 @@ class SearchesController < ApplicationController
 
   def search
     @range = params[:range]
-    search = params[:search]
-    word = params[:word]
+    search = params[:search_method]
+    word = params[:search_word]
 
     if @range == '1'
-      @user = User.search(search,word)
+      @users = User.search(search,word)
+      if @users.empty?
+        @users = User.all
+      end
     else
-      @book = Book.search(search,word)
+      @books = Book.search(search,word)
+      if @books.empty?
+        @books = Book.all
+      end
     end
   end
+end
