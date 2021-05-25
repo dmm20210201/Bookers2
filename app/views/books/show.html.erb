@@ -90,11 +90,11 @@
         </table>
 
           <div id="comments">
-            <%= render 'book_comments/comments', book: @book, book_comment: @book.book_comments, user: @book.user %>
+            <%= render 'book_comments/comments', book: @book %>
           </div>
 
-        <div class="new-comment">
-          <%= render 'book_comments/book_comment-btn', book: @book, book_comment: @book_comment %>
+        <div id="new-comment">
+          <%= render 'book_comments/book_comment-form', book: @book, book_comment: @book_comment %>
         </div>
       </div>
 

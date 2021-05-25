@@ -1,2 +1,1 @@
-$("#comments").html("<%= j(render 'book_comments/comments', book: @book, user: @book.user) %>");
-$("textarea").val('')
+$("#comments").html("<%= j(render partial: 'book_comments/comments', locals: {book: @book} ) %>");
